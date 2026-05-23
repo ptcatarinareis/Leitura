@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O Diagnóstico do Padrão™ · PT Holística</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; }
+
+    body {
+      background: #faf9f7;
+      color: #1a1a1a;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+    }
+
+    .tag {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 2rem;
+      display: block;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 300;
+      line-height: 1.12;
+      color: #1a1a1a;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: #555;
+      margin-top: 1.25rem;
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+      line-height: 1.75;
+    }
+
+    .divider {
+      width: 32px;
+      height: 0.5px;
+      background: #aaa;
+      margin: 2rem 0;
+    }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .body-text {
+      font-size: 15px;
+      line-height: 1.85;
+      color: #555;
+      margin-bottom: 1.25rem;
+    }
+
+    .body-text strong {
+      font-weight: 400;
+      color: #1a1a1a;
+    }
+
+    blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.5;
+      color: #1a1a1a;
+      padding-left: 1.5rem;
+      border-left: 0.5px solid #ccc;
+      margin: 2rem 0;
+    }
+
+    .includes {
+      margin: 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .include-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 0.5px solid #e5e5e5;
+    }
+
+    .include-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      color: #bbb;
+      flex-shrink: 0;
+      min-width: 18px;
+      margin-top: 2px;
+    }
+
+    .include-title {
+      font-size: 14px;
+      font-weight: 400;
+      color: #1a1a1a;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .include-desc {
+      font-size: 13px;
+      color: #777;
+      line-height: 1.6;
+    }
+
+    .price-block {
+      margin: 2.5rem 0;
+      padding: 1.75rem;
+      border: 0.5px solid #e0e0e0;
+      border-radius: 12px;
+      background: #f4f3f0;
+    }
+
+    .price-label {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      font-weight: 300;
+      color: #1a1a1a;
+      margin-bottom: 0.2rem;
+    }
+
+    .price-note {
+      font-size: 12px;
+      color: #aaa;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta {
+      display: block;
+      width: 100%;
+      padding: 14px 28px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #faf9f7;
+      background: #1a1a1a;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .cta:hover { opacity: 0.75; }
+
+    .cta-note {
+      font-size: 11px;
+      color: #aaa;
+      text-align: center;
+      margin-top: 0.75rem;
+    }
+
+    .faq {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .faq-item {
+      border-bottom: 0.5px solid #e5e5e5;
+      padding-bottom: 1.25rem;
+    }
+
+    .faq-q {
+      font-size: 14px;
+      font-weight: 400;
+      color: #1a1a1a;
+      margin-bottom: 0.4rem;
+    }
+
+    .faq-a {
+      font-size: 13px;
+      color: #777;
+      line-height: 1.75;
+    }
+
+    footer {
+      margin-top: 3.5rem;
+      padding-top: 1.5rem;
+      border-top: 0.5px solid #e5e5e5;
+      font-size: 11px;
+      color: #bbb;
+      text-align: center;
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 480px) {
+      .page { padding: 2rem 1.25rem 3rem; }
+      .hero-title { font-size: 36px; }
+      blockquote { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <span class="tag">Catarina · Personal Trainer Holística</span>
+
+    <h1 class="hero-title">
+      O Diagnóstico<br>
+      <em>do Padrão</em>™
+    </h1>
+
+    <p class="hero-sub">
+      Uma leitura escrita, personalizada, que identifica o padrão ou os padrões específicos que te impedem de ter um corpo que reflita quem já és por dentro.
+    </p>
+
+    <div class="divider"></div>
+
+    <span class="section-label">O que está a acontecer</span>
+
+    <p class="body-text">
+      Já fizeste progressos noutras áreas da tua vida, noutras versões de ti mesma, mas o teu corpo ainda não acompanhou quem te tornaste. E tu sabes perfeitamente que isso não é uma falha de disciplina...
+    </p>
+
+    <p class="body-text">
+      É um padrão. <strong>Específico, identificável</strong> e quando visto com clareza é transformável.
+    </p>
+
+    <blockquote>
+      "Não se trata de te convencer a mudar.<br>
+      Trata-se de perceber o que te impede de <em>ser</em> o que já és."
+    </blockquote>
+
+    <div class="divider"></div>
+
+    <span class="section-label">O que inclui</span>
+
+    <div class="includes">
+      <div class="include-item">
+        <span class="include-num">01</span>
+        <div>
+          <span class="include-title">O padrão emocional central</span>
+          <span class="include-desc">O fio condutor que atravessa tudo e que ainda não tinha nome.</span>
+        </div>
+      </div>
+      <div class="include-item">
+        <span class="include-num">02</span>
+        <div>
+          <span class="include-title">Como ele se sente no corpo</span>
+          <span class="include-desc">Onde o padrão está localizado no teu corpo e o que o corpo está a comunicar.</span>
+        </div>
+      </div>
+      <div class="include-item">
+        <span class="include-num">03</span>
+        <div>
+          <span class="include-title">A raiz do bloqueio</span>
+          <span class="include-desc">De onde vem. O que o alimenta. Por que razão persiste apesar do teu esforço.</span>
+        </div>
+      </div>
+      <div class="include-item">
+        <span class="include-num">04</span>
+        <div>
+          <span class="include-title">Os padrões que repetes</span>
+          <span class="include-desc">Os ciclos que se instalam no corpo, na alimentação, no movimento, na relação contigo.</span>
+        </div>
+      </div>
+      <div class="include-item">
+        <span class="include-num">05</span>
+        <div>
+          <span class="include-title">O que te impede de começar</span>
+          <span class="include-desc">Não é preguiça. Não é falta de vontade. É isto.</span>
+        </div>
+      </div>
+      <div class="include-item">
+        <span class="include-num">06</span>
+        <div>
+          <span class="include-title">O que a tua alma precisa primeiro</span>
+          <span class="include-desc">Antes de qualquer plano. Antes de qualquer esforço. O que precisa de acontecer por dentro.</span>
+        </div>
+      </div>
+      <div class="include-item">
+        <span class="include-num">07</span>
+        <div>
+          <span class="include-title">Uma mensagem canalizada</span>
+          <span class="include-desc">Palavras que chegam para ti, neste momento exacto do teu caminho.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <span class="section-label">Para quem é</span>
+
+    <p class="body-text">
+      Para mulheres que fizeram o trabalho interior. Que se conhecem bem, que têm uma vida construída com intenção, <strong>mas que sentem que o corpo ficou para trás.</strong>
+    </p>
+
+    <p class="body-text">
+      Este método é para quem quer curar feridas da alma através do corpo.
+    </p>
+
+    <div class="price-block">
+      <span class="price-label">Investimento</span>
+      <div class="price">€ 11</div>
+      <p class="price-note">Pagamento único · Entrega por email</p>
+      <a href="#" class="cta">Quero o meu diagnóstico</a>
+      <p class="cta-note">Após o pagamento, recebes o questionário na página de checkout.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <span class="section-label">Perguntas frequentes</span>
+
+    <div class="faq">
+      <div class="faq-item">
+        <p class="faq-q">Em quanto tempo recebo a leitura?</p>
+        <p class="faq-a">Em menos de 1 hora após o teu questionário estar preenchido.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">É uma sessão ao vivo?</p>
+        <p class="faq-a">Não. É uma leitura escrita, detalhada, entregue por email. Podes lê-la e relê-la com calma.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">É diferente de uma consulta de nutrição ou treino?</p>
+        <p class="faq-a">Completamente. Não recebes um plano alimentar nem um programa. Recebes clareza sobre o que está a bloquear, que é o que nenhum plano consegue dar-te.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">E depois?</p>
+        <p class="faq-a">A leitura inclui orientação sobre o próximo passo. Para quem quiser aprofundar, existe a possibilidade de continuar em acompanhamento 1:1.</p>
+      </div>
+    </div>
+
+    <footer>
+      © 2026 · PT Holística · Todos os direitos reservados
+    </footer>
+
+  </main>
+</body>
+</html>
